@@ -26,3 +26,8 @@ info:
     profile: ${spring.profiles.active}
   serverInfo:
     port: ${server.port}
+
+datasource:
+  url: ${customer.datasource.url}
+  username: ${customer.datasource.username}
+  password: ${customer.datasource.password}
