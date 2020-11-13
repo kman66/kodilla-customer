@@ -26,3 +26,6 @@ info:
     profile: ${spring.profiles.active}
   serverInfo:
     port: ${server.port}
+
+eureka:
+  client: ${eureka-client}
