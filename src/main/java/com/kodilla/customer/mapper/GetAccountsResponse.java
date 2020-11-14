@@ -7,5 +7,5 @@ import java.util.List;
 
 @Data
 public class GetAccountsResponse {
-	private List<AccountDTO> accounts;
+	private final List<AccountDTO> accounts;
 }

@@ -12,12 +12,19 @@ spring:
     database: ${customer.datasource.database}
     hibernate:
       ddl-mode: ${customer.datasource.ddl-mode}
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
+    circuitbreaker:
+      hystrix:
+        enabled: false
 
 management:
   endpoints:
     web:
       exposure:
-        include: 'info,health,refresh,metrics,mappings'
+        include: 'info,health,refresh,metrics,mappings,hystrix.stream'
 
 info:
   app:
@@ -29,3 +36,7 @@ info:
 
 eureka:
   client: ${eureka-client}
+
+feign:
+  hystrix:
+    enabled: true
