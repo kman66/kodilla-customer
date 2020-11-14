@@ -1,5 +1,7 @@
-package com.kodilla.customer;
+package com.kodilla.customer.controller;
 
+import com.kodilla.customer.dto.CustomerDTO;
+import com.kodilla.customer.mapper.GetCustomerResponse;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -7,9 +9,11 @@ import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.web.server.ResponseStatusException;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -43,7 +47,8 @@ class CustomerControllerTest {
 	@Test
 	public void shouldThrowExceptionWhenCustomerNotFound() throws Exception {
 		// given
-		Mockito.when(customerController.getCustomer(1111L)).thenThrow(new CustomerNotFoundException());
+		Mockito.when(customerController.getCustomer(1111L))
+				.thenThrow(new ResponseStatusException(HttpStatus.NOT_FOUND));
 		// when & then
 		mockMvc.perform(get("/v1/customer/1111")
 				.contentType(MediaType.APPLICATION_JSON))

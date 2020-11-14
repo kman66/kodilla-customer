@@ -1,5 +1,6 @@
-package com.kodilla.customer;
+package com.kodilla.customer.mapper;
 
+import com.kodilla.customer.dto.CustomerDTO;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 

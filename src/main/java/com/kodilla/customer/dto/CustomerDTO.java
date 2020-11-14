@@ -1,4 +1,4 @@
-package com.kodilla.customer;
+package com.kodilla.customer.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

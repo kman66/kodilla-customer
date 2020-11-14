@@ -1,4 +1,4 @@
-package com.kodilla.customer;
+package com.kodilla.customer.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
