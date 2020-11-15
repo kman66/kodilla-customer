@@ -19,9 +19,7 @@ public class AccountsProvider {
 
 	private final AccountsConnector accountsConnector;
 
-	@HystrixCommand(fallbackMethod = "fallbackGetAccounts", commandProperties = {
-			@HystrixProperty(name="execution.isolation.strategy", value="SEMAPHORE")
-	})
+	@HystrixCommand(fallbackMethod = "fallbackGetAccounts")
 	public List<AccountDTO> getCustomerAccounts(Long customerId) {
 		return accountsConnector.getAccounts(customerId)
 				.getAccounts()
