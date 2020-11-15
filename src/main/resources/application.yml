@@ -12,13 +12,6 @@ spring:
     database: ${customer.datasource.database}
     hibernate:
       ddl-mode: ${customer.datasource.ddl-mode}
-  cloud:
-    loadbalancer:
-      ribbon:
-        enabled: false
-    circuitbreaker:
-      hystrix:
-        enabled: false
 
 management:
   endpoints:
