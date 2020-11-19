@@ -27,15 +27,15 @@ info:
   serverInfo:
     port: ${server.port}
 
-#eureka:
-#  client: ${eureka-client}
+eureka:
+  client: ${eureka-client}
 
 accounts:
   ribbon:
     eureka:
-      enabled: false
+      enabled: true
     listOfServers: localhost:9999,localhost:9998
 
 feign:
   hystrix:
-    enabled: false
+    enabled: true
