@@ -30,11 +30,11 @@ info:
 eureka:
   client: ${eureka-client}
 
-accounts:
-  ribbon:
-    eureka:
-      enabled: true
-    listOfServers: localhost:9999,localhost:9998
+#accounts:
+#  ribbon:
+#    eureka:
+#      enabled: true
+#    listOfServers: localhost:9999,localhost:9998
 
 feign:
   hystrix:
